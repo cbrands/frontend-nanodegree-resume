@@ -50,6 +50,7 @@ var education = {
     ]
 };
 
+//create job object
 var work = {
   "jobs": [
     {
@@ -93,18 +94,6 @@ var work = {
             var formattedDescription = HTMLworkDates.replace("%data%", job.description);
             $(".work-entry:last").append(formattedDescription);
         })
-   //TODO replace with foreach
-//        for(job in this.jobs) {
-//            $("#workExperience").append(HTMLworkStart);
-//            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-//            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-//            var formattedEmployerTitle = formattedEmployer + formattedTitle;
-//            $(".work-entry:last").append(formattedEmployerTitle);
-//            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-//            $(".work-entry:last").append(formattedDates);
-//            var formattedDescription = HTMLworkDates.replace("%data%", work.jobs[job].description);
-//            $(".work-entry:last").append(formattedDescription);
-//        } 
     }
 };
 
@@ -115,12 +104,33 @@ if(bio.skills.length > 0) {
 }
 
 
-
 work.displayWork();
 
-
-//work
-//work contains an array of jobs. Each object in the jobs array should contain an employer, title, location, dates worked and description strings.
-//
-//projects
-//projects contains an array of projects. Each object in the projects array should contain title, dates and description strings, and an images array with URL strings for project images.
+var project = {
+    "projects": [
+        {
+            "title": "Resume site",
+            "dates": 2017,
+            "description": "Site that shows what a good fellow I am.",
+            "images": [
+                "http://www.example.com"
+            ]
+        },
+        {
+            "title": "Portfolio site",
+            "dates": 2017,
+            "description": "My portfolio site, showing of the NEtherlands",
+            "images": [
+                "http://www.example.com"
+            ]
+        },
+        {
+            "title": "Animal card",
+            "dates": 2017,
+            "description": "An animal card of cats. Cats are cool.",
+            "images": [
+                "http://www.example.com"
+            ]
+        }
+    ]
+};
