@@ -40,17 +40,35 @@ var education = {
             "url": "http://www.example.com"
         }
     ],
-    "onlinecourses": [
+    "onlineCourses": [
         {
             "title": "Javascript syntax",
             "school": "Udacity",
             "dates": 2014,
             "url": "http://www.example.com"
         }
-    ]
+    ],
+    displayEducation: function() {
+        this.schools.forEach((school) => {
+            $("#education").append(HTMLschoolStart);
+            var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+            $(".education-entry:last").append(formattedSchoolName);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+            $(".education-entry:last").append(formattedSchoolDegree);
+            var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
+            $(".education-entry:last").append(formattedDates);
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+            $(".education-entry:last").append(formattedSchoolLocation);
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.major);
+            $(".education-entry:last").append(formattedSchoolMajor);
+        });
+        this.onlineCourses.forEach((course) => {
+            
+        });
+    }
 };
 
-//create job object
+//Define work object
 var work = {
     "jobs": [
         {
@@ -93,7 +111,7 @@ var work = {
             $(".work-entry:last").append(formattedDates);
             var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
             $(".work-entry:last").append(formattedDescription);
-        })
+        });
     }
 };
 
@@ -103,9 +121,7 @@ if(bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
 }
 
-
-work.displayWork();
-
+//Define project object
 var project = {
     "projects": [
         {
@@ -142,8 +158,10 @@ var project = {
             $(".project-entry:last").append(formattedDates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", aProject.description);
             $(".project-entry:last").append(formattedDescription);
-        })
+        });
     }
 };
 
+education.displayEducation();
+work.displayWork();
 project.displayProject();
