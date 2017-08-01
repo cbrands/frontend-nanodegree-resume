@@ -82,18 +82,29 @@ var work = {
     }
   ],
     displayWork: function() {
-   //TODO replace with foreach
-        for(job in this.jobs) {
+        this.jobs.forEach((job) => {
             $("#workExperience").append(HTMLworkStart);
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
             var formattedEmployerTitle = formattedEmployer + formattedTitle;
             $(".work-entry:last").append(formattedEmployerTitle);
-            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            var formattedDates = HTMLworkDates.replace("%data%", job.dates);
             $(".work-entry:last").append(formattedDates);
-            var formattedDescription = HTMLworkDates.replace("%data%", work.jobs[job].description);
+            var formattedDescription = HTMLworkDates.replace("%data%", job.description);
             $(".work-entry:last").append(formattedDescription);
-        } 
+        })
+   //TODO replace with foreach
+//        for(job in this.jobs) {
+//            $("#workExperience").append(HTMLworkStart);
+//            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+//            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+//            var formattedEmployerTitle = formattedEmployer + formattedTitle;
+//            $(".work-entry:last").append(formattedEmployerTitle);
+//            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+//            $(".work-entry:last").append(formattedDates);
+//            var formattedDescription = HTMLworkDates.replace("%data%", work.jobs[job].description);
+//            $(".work-entry:last").append(formattedDescription);
+//        } 
     }
 };
 
