@@ -7,8 +7,7 @@ var bio = {
         "email" : "john@example.com",
         "github" : "johndoe",
         "location" : "San Fransisco",
-        "twitter": "#birdie",
-        "bioPic": "images/fry.jpg"
+        "twitter": "#birdie"
     },
     "welcomeMessage" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "skills" : ["awesomeness", "deleivering things", "cryogenic sleep", "saving the universe"],
@@ -19,6 +18,16 @@ var bio = {
         var formattedRole = HTMLheaderRole.replace("%data%", this.role);
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
+        var formattedMobile = HTMLmobile.replace("%data%", this.contacts.mobile);
+        $("#header").append(formattedMobile);
+        var formattedEmail = HTMLemail.replace("%data%", this.contacts.email);
+        $("#header").append(formattedEmail);        
+        var formattedGithub = HTMLgithub.replace("%data%", this.contacts.github);
+        $("#header").append(formattedGithub);
+        var formattedTwitter = HTMLtwitter.replace("%data%", this.contacts.twitter);
+        $("#header").append(formattedTwitter);
+        var formattedLocation = HTMLlocation.replace("%data%", this.contacts.location);
+        $("#header").append(formattedLocation);
         var formattedImage = HTMLbioPic.replace("%data%", this.bioPic);
         $("#header").append(formattedImage);
         var formattedMessage = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
@@ -30,7 +39,6 @@ var bio = {
                 $("#skills").append(formattedSkill);
             });
         }
-
     }
 };
 
