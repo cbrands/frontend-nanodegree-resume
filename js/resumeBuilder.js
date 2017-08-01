@@ -1,12 +1,4 @@
-//var name = "Charles Brands";
-//var formattedName = HTMLheaderName.replace("%data%", name);
-//
-//var role = "Java Developer";
-//var formattedRole = HTMLheaderRole.replace("%data%", role);
-//
-//$("#header").prepend(formattedRole);
-//$("#header").prepend(formattedName);
-
+//Define bio object
 var bio = {
     "name" : "John Doe",
     "role" : "Web Developer",
@@ -14,13 +6,35 @@ var bio = {
         "mobile" : "650-555-5555",
         "email" : "john@example.com",
         "github" : "johndoe",
-        "location" : "San Fransisco"
+        "location" : "San Fransisco",
+        "twitter": "#birdie",
+        "bioPic": "images/fry.jpg"
     },
     "welcomeMessage" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "skills" : ["awesomeness", "deleivering things", "cryogenic sleep", "saving the universe"],
-    "bioPic" : "images/fry.jpg"
+    "bioPic" : "images/fry.jpg",
+    
+    displayBio: function() {
+        var formattedName = HTMLheaderName.replace("%data%", this.name);
+        var formattedRole = HTMLheaderRole.replace("%data%", this.role);
+        $("#header").prepend(formattedRole);
+        $("#header").prepend(formattedName);
+        var formattedImage = HTMLbioPic.replace("%data%", this.bioPic);
+        $("#header").append(formattedImage);
+        var formattedMessage = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
+        $("#header").append(formattedMessage);
+        if(this.skills.length > 0) {
+            $("#header").append(HTMLskillsStart);
+            this.skills.forEach((skill) => {
+                var formattedSkill = HTMLskills.replace("%data%", skill);
+                $("#skills").append(formattedSkill);
+            });
+        }
+
+    }
 };
 
+//Define education object
 var education = {
     "schools": [
         {
@@ -131,12 +145,6 @@ var work = {
     }
 };
 
-if(bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-    var formattedSkill = HTMLskills.replace("%data", bio.skills[0]);
-    $("#skills").append(formattedSkill);
-}
-
 //Define project object
 var project = {
     "projects": [
@@ -178,6 +186,8 @@ var project = {
     }
 };
 
+//Display everything
+bio.displayBio();
 education.displayEducation();
 work.displayWork();
 project.displayProject();
