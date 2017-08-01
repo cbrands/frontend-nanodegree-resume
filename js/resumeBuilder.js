@@ -80,7 +80,21 @@ var work = {
       "dates": "Jun 2009 - Jun 2012",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     }
-  ]
+  ],
+    displayWork: function() {
+   //TODO replace with foreach
+        for(job in this.jobs) {
+            $("#workExperience").append(HTMLworkStart);
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formattedEmployerTitle = formattedEmployer + formattedTitle;
+            $(".work-entry:last").append(formattedEmployerTitle);
+            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            $(".work-entry:last").append(formattedDates);
+            var formattedDescription = HTMLworkDates.replace("%data%", work.jobs[job].description);
+            $(".work-entry:last").append(formattedDescription);
+        } 
+    }
 };
 
 if(bio.skills.length > 0) {
@@ -89,22 +103,9 @@ if(bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
 }
 
-function displayWork() {
-   //TODO replace with foreach
-    for(job in work.jobs) {
-        $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-        var formattedEmployerTitle = formattedEmployer + formattedTitle;
-        $(".work-entry:last").append(formattedEmployerTitle);
-        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-        $(".work-entry:last").append(formattedDates);
-        var formattedDescription = HTMLworkDates.replace("%data%", work.jobs[job].description);
-        $(".work-entry:last").append(formattedDescription);
-    } 
-}
 
-displayWork();
+
+work.displayWork();
 
 
 //work
