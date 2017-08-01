@@ -46,9 +46,16 @@ var education = {
             "school": "Udacity",
             "dates": 2014,
             "url": "http://www.example.com"
+        },
+        {
+            "title": "Javascript syntax",
+            "school": "Udacity",
+            "dates": 2014,
+            "url": "http://www.example.com"
         }
     ],
     displayEducation: function() {
+        $("#education").append(HTMLschoolStart);
         this.schools.forEach((school) => {
             $("#education").append(HTMLschoolStart);
             var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
@@ -62,8 +69,17 @@ var education = {
             var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.major);
             $(".education-entry:last").append(formattedSchoolMajor);
         });
+        $("#education").append(HTMLonlineClasses);
         this.onlineCourses.forEach((course) => {
-            
+            $("#education").append(HTMLschoolStart);
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
+            $(".education-entry:last").append(formattedOnlineTitle);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
+            $(".education-entry:last").append(formattedOnlineSchool);
+            var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
+            $(".education-entry:last").append(formattedDates);
+            var formattedUrl = HTMLonlineURL.replace("%data%", course.url);
+            $(".education-entry:last").append(formattedUrl);
         });
     }
 };
