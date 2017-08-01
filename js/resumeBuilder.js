@@ -14,7 +14,7 @@ var bio = {
         "mobile" : "650-555-5555",
         "email" : "john@example.com",
         "github" : "johndoe",
-        "location" : "San Fransisco",
+        "location" : "San Fransisco"
     },
     "welcomeMessage" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "skills" : ["awesomeness", "deleivering things", "cryogenic sleep", "saving the universe"],
@@ -52,37 +52,37 @@ var education = {
 
 //create job object
 var work = {
-  "jobs": [
-    {
-      "employer": "Udacity",
-      "title": "Course Developer",
-      "location": "Mountain View, CA",
-      "dates": "Feb 2014 - Current",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    },
-    {
-      "employer": "LearnBIG",
-      "title": "Software Engineer",
-      "location": "Seattle, WA",
-      "dates": "May 2013 - Jan 2014",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    },
-    {
-      "employer": "LEAD Academy Charter High School",
-      "title": "Science Teacher",
-      "location": "Nashville, TN",
-      "dates": "Jul 2012 - May 2013",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    },
-    {
-      "employer": "Stratford High School",
-      "title": "Science Teacher",
-      "location": "Nashville, TN",
-      "dates": "Jun 2009 - Jun 2012",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    }
-  ],
-    displayWork: function() {
+    "jobs": [
+        {
+            "employer": "Udacity",
+            "title": "Course Developer",
+            "location": "Mountain View, CA",
+            "dates": "Feb 2014 - Current",
+            "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+        },
+        {
+            "employer": "LearnBIG",
+            "title": "Software Engineer",
+            "location": "Seattle, WA",
+            "dates": "May 2013 - Jan 2014",
+            "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+        },
+        {
+            "employer": "LEAD Academy Charter High School",
+            "title": "Science Teacher",
+            "location": "Nashville, TN",
+            "dates": "Jul 2012 - May 2013",
+            "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+        },
+        {
+            "employer": "Stratford High School",
+            "title": "Science Teacher",
+            "location": "Nashville, TN",
+            "dates": "Jun 2009 - Jun 2012",
+            "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+        }
+    ],
+    displayWork: function () {
         this.jobs.forEach((job) => {
             $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
@@ -91,7 +91,7 @@ var work = {
             $(".work-entry:last").append(formattedEmployerTitle);
             var formattedDates = HTMLworkDates.replace("%data%", job.dates);
             $(".work-entry:last").append(formattedDates);
-            var formattedDescription = HTMLworkDates.replace("%data%", job.description);
+            var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
             $(".work-entry:last").append(formattedDescription);
         })
     }
@@ -119,7 +119,7 @@ var project = {
         {
             "title": "Portfolio site",
             "dates": 2017,
-            "description": "My portfolio site, showing of the NEtherlands",
+            "description": "My portfolio site, showing of the Netherlands",
             "images": [
                 "http://www.example.com"
             ]
@@ -132,5 +132,18 @@ var project = {
                 "http://www.example.com"
             ]
         }
-    ]
+    ], 
+    displayProject: function() {
+        this.projects.forEach((aProject) => {
+            $("#projects").append(HTMLprojectStart);
+            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", aProject.title);
+            $(".project-entry:last").append(formattedProjectTitle);
+            var formattedDates = HTMLprojectDates.replace("%data%", aProject.dates);
+            $(".project-entry:last").append(formattedDates);
+            var formattedDescription = HTMLprojectDescription.replace("%data%", aProject.description);
+            $(".project-entry:last").append(formattedDescription);
+        })
+    }
 };
+
+project.displayProject();
