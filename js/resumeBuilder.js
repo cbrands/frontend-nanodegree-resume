@@ -1,16 +1,16 @@
 //Define bio object
 var bio = {
-    "name" : "John Doe",
-    "role" : "Web Developer",
+    "name" : "Charles Brands",
+    "role" : "Java Developer",
     "contacts" : {
         "mobile" : "650-555-5555",
         "email" : "john@example.com",
         "github" : "johndoe",
-        "location" : "San Fransisco",
+        "location" : "Nieuwegein, NL",
         "twitter": "#birdie"
     },
-    "welcomeMessage" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-    "skills" : ["awesomeness", "deleivering things", "cryogenic sleep", "saving the universe"],
+    "welcomeMessage" : "Welcome to my resume site.",
+    "skills" : ["Physics", "Java development", "SQL development", "Windsurfing"],
     "bioPic" : "images/fry.jpg",
     
     displayBio: function() {
@@ -19,19 +19,19 @@ var bio = {
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
         var formattedMobile = HTMLmobile.replace("%data%", this.contacts.mobile);
-        $("#header").append(formattedMobile);
+        $("#topContacts").append(formattedMobile);
         $("#footerContacts").append(formattedMobile);
         var formattedEmail = HTMLemail.replace("%data%", this.contacts.email);
-        $("#header").append(formattedEmail);
+        $("#topContacts").append(formattedEmail);
         $("#footerContacts").append(formattedEmail); 
         var formattedGithub = HTMLgithub.replace("%data%", this.contacts.github);
-        $("#header").append(formattedGithub);
+        $("#topContacts").append(formattedGithub);
         $("#footerContacts").append(formattedGithub);
         var formattedTwitter = HTMLtwitter.replace("%data%", this.contacts.twitter);
-        $("#header").append(formattedTwitter);
+        $("#topContacts").append(formattedTwitter);
         $("#footerContacts").append(formattedTwitter);
         var formattedLocation = HTMLlocation.replace("%data%", this.contacts.location);
-        $("#header").append(formattedLocation);
+        $("#topContacts").append(formattedLocation);
         $("#footerContacts").append(formattedLocation);
         var formattedImage = HTMLbioPic.replace("%data%", this.bioPic);
         $("#header").append(formattedImage);

@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #ffcc66;
   line-height: 48px;
   display: inline;
 }
@@ -100,16 +100,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #ffcc66;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: #0066ff;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #ffcc66;
 }
 
 .white-text {
@@ -123,13 +123,12 @@ a {
   clear: both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+.dark-blue {
+  background-color: #0000cc;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #0000cc;
 }
 
 .flex-box {
@@ -173,6 +172,10 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+#connectTitel {
+    color: #ffcc66;
 }
 
 /* Media queries to handle various device widths */
