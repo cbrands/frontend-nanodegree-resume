@@ -13,7 +13,7 @@ var bio = {
     "skills": ["Physics", "Java development", "SQL development", "Windsurfing"],
     "bioPic": "images/fry.jpg",
 
-    displayBio: function () {
+    displayBio: function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
@@ -49,13 +49,12 @@ var bio = {
 
 //Define education object
 var education = {
-    "schools": [
-        {
+    "schools": [{
             "name": "Virginia Tech",
             "location": "Blacksburg, VA, US",
             "degree": "PhD",
             "major": ["Physics"],
-            "dates": 2003,
+            "dates": "2017",
             "url": "https://www.phys.vt.edu/"
         },
         {
@@ -63,25 +62,24 @@ var education = {
             "location": "Charlottesville, VA, US",
             "degree": "Masters",
             "major": ["Physics"],
-            "dates": 1997,
+            "dates": "2017",
             "url": "http://www.phys.virginia.edu/"
         }
     ],
-    "onlineCourses": [
-        {
+    "onlineCourses": [{
             "title": "Front-End Webdeveloper",
             "school": "Udacity",
-            "dates": 2017,
+            "dates": "2017",
             "url": "https://classroom.udacity.com/nanodegrees/nd001/syllabus/core-curriculum"
         },
         {
             "title": "React Nano degree",
             "school": "Udacity",
-            "dates": 2017,
+            "dates": "2017",
             "url": "https://classroom.udacity.com/nanodegrees/nd019/syllabus/core-curriculum"
         }
     ],
-    displayEducation: function () {
+    displayEducation: function() {
         $("#education").append(HTMLschoolStart);
         education.schools.forEach((school) => {
             $("#education").append(HTMLschoolStart);
@@ -113,8 +111,7 @@ var education = {
 
 //Define work object
 var work = {
-    "jobs": [
-        {
+    "jobs": [{
             "employer": "Rabobank",
             "title": "Java Developer",
             "location": "Utrecht, NL",
@@ -136,7 +133,7 @@ var work = {
             "description": "Java developer. Writing java programs and doing other java stuff. Ignoring impossible demands from managers. "
         }
     ],
-    displayWork: function () {
+    displayWork: function() {
         work.jobs.forEach((job) => {
             $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
@@ -153,17 +150,15 @@ var work = {
 
 //Define project object
 var project = {
-    "projects": [
-        {
+    "projects": [{
             "title": "Resume site",
-            "dates": 2017,
+            "dates": "2017",
             "description": "Site that shows what a good fellow I am.",
-            "images": [
-            ]
+            "images": []
         },
         {
             "title": "Portfolio site",
-            "dates": 2017,
+            "dates": "2017",
             "description": "My portfolio site, showing of the Netherlands",
             "images": [
                 "images/portfolio.png"
@@ -171,14 +166,14 @@ var project = {
         },
         {
             "title": "Animal card",
-            "dates": 2017,
+            "dates": "2017",
             "description": "An animal card of cats. Cats are cool.",
             "images": [
                 "images/catcard.png"
             ]
         }
     ],
-    displayProject: function () {
+    displayProject: function() {
         project.projects.forEach((aProject) => {
             $("#projects").append(HTMLprojectStart);
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", aProject.title);
