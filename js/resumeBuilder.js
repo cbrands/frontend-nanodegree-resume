@@ -51,34 +51,34 @@ var bio = {
 var education = {
     "schools": [
         {
-            "name": "Eckerd College",
-            "location": "Saint Petersburg, FL, US",
-            "degree": "BA",
-            "major": ["CompSci", "French"],
+            "name": "Virginia Tech",
+            "location": "Blacksburg, VA, US",
+            "degree": "PhD",
+            "major": ["Physics"],
             "dates": 2003,
-            "url": "http://www.example.com"
+            "url": "https://www.phys.vt.edu/"
         },
         {
-            "name": "Nova University",
-            "location": "Fort Lauderdale, FL, US",
+            "name": "University of Virginia",
+            "location": "Charlottesville, VA, US",
             "degree": "Masters",
-            "major": ["CompSci"],
-            "dates": 2013,
-            "url": "http://www.example.com"
+            "major": ["Physics"],
+            "dates": 1997,
+            "url": "http://www.phys.virginia.edu/"
         }
     ],
     "onlineCourses": [
         {
-            "title": "Javascript syntax",
+            "title": "Front-End Webdeveloper",
             "school": "Udacity",
-            "dates": 2014,
-            "url": "http://www.example.com"
+            "dates": 2017,
+            "url": "https://classroom.udacity.com/nanodegrees/nd001/syllabus/core-curriculum"
         },
         {
-            "title": "Javascript syntax",
+            "title": "React Nano degree",
             "school": "Udacity",
-            "dates": 2014,
-            "url": "http://www.example.com"
+            "dates": 2017,
+            "url": "https://classroom.udacity.com/nanodegrees/nd019/syllabus/core-curriculum"
         }
     ],
     displayEducation: function() {
