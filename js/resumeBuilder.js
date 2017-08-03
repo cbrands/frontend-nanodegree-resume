@@ -1,45 +1,45 @@
 //Define bio object
 var bio = {
-    "name" : "Charles Brands",
-    "role" : "Java Developer",
-    "contacts" : {
-        "mobile" : "650-555-5555",
-        "email" : "john@example.com",
-        "github" : "johndoe",
-        "location" : "Nieuwegein, NL",
+    "name": "Charles Brands",
+    "role": "Java Developer",
+    "contacts": {
+        "mobile": "650-555-5555",
+        "email": "john@example.com",
+        "github": "johndoe",
+        "location": "Nieuwegein, NL",
         "twitter": "#birdie"
     },
-    "welcomeMessage" : "Welcome to my resume site.",
-    "skills" : ["Physics", "Java development", "SQL development", "Windsurfing"],
-    "bioPic" : "images/fry.jpg",
-    
-    displayBio: function() {
-        var formattedName = HTMLheaderName.replace("%data%", this.name);
-        var formattedRole = HTMLheaderRole.replace("%data%", this.role);
+    "welcomeMessage": "Welcome to my resume site.",
+    "skills": ["Physics", "Java development", "SQL development", "Windsurfing"],
+    "bioPic": "images/fry.jpg",
+
+    displayBio: function () {
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
-        var formattedMobile = HTMLmobile.replace("%data%", this.contacts.mobile);
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         $("#topContacts").append(formattedMobile);
         $("#footerContacts").append(formattedMobile);
-        var formattedEmail = HTMLemail.replace("%data%", this.contacts.email);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         $("#topContacts").append(formattedEmail);
-        $("#footerContacts").append(formattedEmail); 
-        var formattedGithub = HTMLgithub.replace("%data%", this.contacts.github);
+        $("#footerContacts").append(formattedEmail);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         $("#topContacts").append(formattedGithub);
         $("#footerContacts").append(formattedGithub);
-        var formattedTwitter = HTMLtwitter.replace("%data%", this.contacts.twitter);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
         $("#topContacts").append(formattedTwitter);
         $("#footerContacts").append(formattedTwitter);
-        var formattedLocation = HTMLlocation.replace("%data%", this.contacts.location);
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $("#topContacts").append(formattedLocation);
         $("#footerContacts").append(formattedLocation);
-        var formattedImage = HTMLbioPic.replace("%data%", this.bioPic);
+        var formattedImage = HTMLbioPic.replace("%data%", bio.bioPic);
         $("#header").append(formattedImage);
-        var formattedMessage = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
+        var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#header").append(formattedMessage);
-        if(this.skills.length > 0) {
+        if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
-            this.skills.forEach((skill) => {
+            bio.skills.forEach((skill) => {
                 var formattedSkill = HTMLskills.replace("%data%", skill);
                 $("#skills").append(formattedSkill);
             });
@@ -81,9 +81,9 @@ var education = {
             "url": "https://classroom.udacity.com/nanodegrees/nd019/syllabus/core-curriculum"
         }
     ],
-    displayEducation: function() {
+    displayEducation: function () {
         $("#education").append(HTMLschoolStart);
-        this.schools.forEach((school) => {
+        education.schools.forEach((school) => {
             $("#education").append(HTMLschoolStart);
             var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
             $(".education-entry:last").append(formattedSchoolName);
@@ -97,7 +97,7 @@ var education = {
             $(".education-entry:last").append(formattedSchoolMajor);
         });
         $("#education").append(HTMLonlineClasses);
-        this.onlineCourses.forEach((course) => {
+        education.onlineCourses.forEach((course) => {
             $("#education").append(HTMLschoolStart);
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
             $(".education-entry:last").append(formattedOnlineTitle);
@@ -137,7 +137,7 @@ var work = {
         }
     ],
     displayWork: function () {
-        this.jobs.forEach((job) => {
+        work.jobs.forEach((job) => {
             $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
@@ -177,9 +177,9 @@ var project = {
                 "images/catcard.png"
             ]
         }
-    ], 
-    displayProject: function() {
-        this.projects.forEach((aProject) => {
+    ],
+    displayProject: function () {
+        project.projects.forEach((aProject) => {
             $("#projects").append(HTMLprojectStart);
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", aProject.title);
             $(".project-entry:last").append(formattedProjectTitle);
@@ -187,7 +187,7 @@ var project = {
             $(".project-entry:last").append(formattedDates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", aProject.description);
             $(".project-entry:last").append(formattedDescription);
-            if(aProject.images.length > 0) {
+            if (aProject.images.length > 0) {
                 aProject.images.forEach((imageUrl) => {
                     var imageCode = HTMLprojectImage.replace("%data%", imageUrl);
                     $(".project-entry:last").append(imageCode);
