@@ -166,7 +166,6 @@ var project = {
             "dates": 2017,
             "description": "Site that shows what a good fellow I am.",
             "images": [
-                "http://www.example.com"
             ]
         },
         {
@@ -174,7 +173,7 @@ var project = {
             "dates": 2017,
             "description": "My portfolio site, showing of the Netherlands",
             "images": [
-                "http://www.example.com"
+                "images/portfolio.png"
             ]
         },
         {
@@ -182,7 +181,7 @@ var project = {
             "dates": 2017,
             "description": "An animal card of cats. Cats are cool.",
             "images": [
-                "http://www.example.com"
+                "images/catcard.png"
             ]
         }
     ], 
@@ -195,6 +194,12 @@ var project = {
             $(".project-entry:last").append(formattedDates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", aProject.description);
             $(".project-entry:last").append(formattedDescription);
+            if(aProject.images.length > 0) {
+                aProject.images.forEach((imageUrl) => {
+                    var imageCode = HTMLprojectImage.replace("%data%", imageUrl);
+                    $(".project-entry:last").append(imageCode);
+                });
+            }
         });
     }
 };
@@ -204,3 +209,4 @@ bio.displayBio();
 education.displayEducation();
 work.displayWork();
 project.displayProject();
+$("#mapDiv").append(googleMap);
