@@ -19,8 +19,7 @@ var bio = {
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        $("#topContacts").append(formattedMobile);
-        $("#footerContacts").append(formattedMobile);
+        $("#topContacts, #footerContacts").append(formattedMobile);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         $("#topContacts").append(formattedEmail);
         $("#footerContacts").append(formattedEmail);
