@@ -13,7 +13,7 @@ var bio = {
     "skills": ["Physics", "Java development", "SQL development", "Windsurfing"],
     "bioPic": "images/fry.jpg",
 
-    displayBio: function() {
+    display: function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedRole);
@@ -79,7 +79,7 @@ var education = {
             "url": "https://classroom.udacity.com/nanodegrees/nd019/syllabus/core-curriculum"
         }
     ],
-    displayEducation: function() {
+    display: function() {
         $("#education").append(HTMLschoolStart);
         education.schools.forEach((school) => {
             $("#education").append(HTMLschoolStart);
@@ -133,7 +133,7 @@ var work = {
             "description": "Java developer. Writing java programs and doing other java stuff. Ignoring impossible demands from managers. "
         }
     ],
-    displayWork: function() {
+    display: function() {
         work.jobs.forEach((job) => {
             $("#workExperience").append(HTMLworkStart);
             var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
@@ -173,7 +173,7 @@ var project = {
             ]
         }
     ],
-    displayProject: function() {
+    display: function() {
         project.projects.forEach((aProject) => {
             $("#projects").append(HTMLprojectStart);
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", aProject.title);
@@ -193,8 +193,8 @@ var project = {
 };
 
 //Display everything
-bio.displayBio();
-education.displayEducation();
-work.displayWork();
-project.displayProject();
+bio.display();
+education.display();
+work.display();
+project.display();
 $("#mapDiv").append(googleMap);
