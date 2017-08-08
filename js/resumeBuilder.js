@@ -6,12 +6,12 @@ var bio = {
         "mobile": "650-555-5555",
         "email": "john@example.com",
         "github": "johndoe",
-        "location": "Nieuwegein, NL",
-        "twitter": "#birdie"
+        "twitter": "#birdie",
+        "location": "Nieuwegein, NL"
     },
     "welcomeMessage": "Welcome to my resume site.",
     "skills": ["Physics", "Java development", "SQL development", "Windsurfing"],
-    "bioPic": "images/fry.jpg",
+    "biopic": "images/fry.jpg",
 
     display: function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -33,7 +33,7 @@ var bio = {
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $("#topContacts").append(formattedLocation);
         $("#footerContacts").append(formattedLocation);
-        var formattedImage = HTMLbioPic.replace("%data%", bio.bioPic);
+        var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
         $("#header").append(formattedImage);
         var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#header").append(formattedMessage);
@@ -53,7 +53,7 @@ var education = {
             "name": "Virginia Tech",
             "location": "Blacksburg, VA, US",
             "degree": "PhD",
-            "major": ["Physics"],
+            "majors": ["Physics"],
             "dates": "2017",
             "url": "https://www.phys.vt.edu/"
         },
@@ -61,7 +61,7 @@ var education = {
             "name": "University of Virginia",
             "location": "Charlottesville, VA, US",
             "degree": "Masters",
-            "major": ["Physics"],
+            "majors": ["Physics"],
             "dates": "2017",
             "url": "http://www.phys.virginia.edu/"
         }
@@ -91,8 +91,8 @@ var education = {
             $(".education-entry:last").append(formattedDates);
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
             $(".education-entry:last").append(formattedSchoolLocation);
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.major);
-            $(".education-entry:last").append(formattedSchoolMajor);
+            var formattedSchoolMajors = HTMLschoolMajor.replace("%data%", school.majors);
+            $(".education-entry:last").append(formattedSchoolMajors);
         });
         $("#education").append(HTMLonlineClasses);
         education.onlineCourses.forEach((course) => {
@@ -149,7 +149,7 @@ var work = {
 };
 
 //Define project object
-var project = {
+var projects = {
     "projects": [{
             "title": "Resume site",
             "dates": "2017",
@@ -174,7 +174,7 @@ var project = {
         }
     ],
     display: function() {
-        project.projects.forEach((aProject) => {
+        projects.projects.forEach((aProject) => {
             $("#projects").append(HTMLprojectStart);
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", aProject.title);
             $(".project-entry:last").append(formattedProjectTitle);
@@ -196,5 +196,5 @@ var project = {
 bio.display();
 education.display();
 work.display();
-project.display();
+projects.display();
 $("#mapDiv").append(googleMap);
